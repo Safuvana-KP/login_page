@@ -5,7 +5,6 @@ import 'Home_page.dart';
 class LoginScreen extends StatelessWidget {
   final _usernameController=TextEditingController();
   final _passwordController=TextEditingController();
-  bool _isDataMatched=true;
   final _formKey=GlobalKey<FormState>();
 
   RegExp user_valid=RegExp(r"(@!$%bcefghjklopqrstuvwxyzBCEFGHJKLOPQRSTUVWXYZ[0-9])");
