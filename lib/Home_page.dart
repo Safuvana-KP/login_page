@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project1/Product_Model.dart';
+import 'detail_page/Detail_page.dart';
+
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+final Product product;
+  const HomePage( {super.key, required this.product});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -16,14 +20,17 @@ class _HomePageState extends State<HomePage> {
         title: Text("Product List",style: TextStyle( fontSize: 17,fontWeight: FontWeight.bold),),
       ) ,
       body:Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+        padding:  EdgeInsets.symmetric(horizontal: 2.0),
         child: ListView(
             children: [
               CupertinoSearchTextField(
                 prefixIcon: Icon(CupertinoIcons.search),
               ),
               SizedBox(height: 10,),
-              InkWell(
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>DetailPage(product: product),));
+                },
                 child: Row(
                   children: [
                     Container(
@@ -32,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                     height: 35,
                     width: 35),
                     SizedBox(width: 20,),
-                    Text("Essence Mascara Lash Princess",style: TextStyle(fontSize: 12),),
+                    Text('',style: TextStyle(fontSize: 12),),
                   ],
                 ),
               ),
