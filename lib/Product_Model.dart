@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+
+class Product{
+  final String title;
+  final String description;
+  final String image;
+  final double price;
+  final double rate;
+  int quantity;
+  final double offer;
+
+  Product(
+     {required this. title,
+  required this.quantity,
+       required this.image,
+  required this.description,
+       required this.price,required this.offer,
+       required this.rate}
+      );
+
+}
+
+final List<Product>all=[
+  Product(
+      title:"Essence Mascara Lash Princess",
+      quantity: 5,
+    image: 'https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png',
+    description: 'The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects.Achieve dramatic lashes with this long-lasting and cruelty-free formula',
+    price: 9.9,
+    offer: 7.17,
+    rate: 4.94,
+  ),
+  Product(
+      title:'Eyeshadow Pallette with Mirror',
+      quantity:44 ,
+      image: '',
+      description:'' ,
+      price:19.99,
+      offer:5.5,
+      rate:3.28 ,
+  ),
+  Product(
+    title:'',
+    quantity:0 ,
+    image:'',
+    description:'' ,
+    price:0,
+    offer:0,
+    rate: 0,
+  ),
+ ];
