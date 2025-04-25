@@ -19,18 +19,8 @@ class _DetailPageState extends State<DetailPage> {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: (){
-
-            },
-            icon:const Icon(Icons.add_to_photos),
-          ),
-          IconButton(
             onPressed: (){},
             icon:const Icon(Icons.share_outlined),
-          ),
-          IconButton(
-            onPressed: (){},
-            icon:const Icon(Icons.favorite),
           ),
         ],
       ),
@@ -43,15 +33,16 @@ class _DetailPageState extends State<DetailPage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               image: DecorationImage(
-                image:NetworkImage("https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png") ,
+                image:NetworkImage(widget.product.image) ,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          ProductDetail(),
+          ProductDetail(product: widget.product),
       ]
       ),
       floatingActionButton:AddtoCart(product: widget.product,),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
     );
   }
